@@ -1,0 +1,44 @@
+<div class="page">
+  <div class="page-layout">
+    <header class="page-header">
+      <%= image_tag "tines.svg", alt: "tines", width: 100, height: 30 %>
+    </header>
+
+    <div class="body">
+      <h1 class="page-title">Welcome!</h1>
+
+      <p>
+        Great to see you here. This environment is set up to ensure everything is working correctly before your technical interview.
+      </p>
+
+      <p>
+        We'll send you a link to the technical challenge repository at the time of your interview, which uses the same packages as this sandbox.
+      </p>
+
+      <p>
+        If you can see this page and the illustration below, your development environment is properly configured and you're all set!
+      </p>
+    </div>
+
+    <div class="form">
+    </div>
+
+    <div class="illustration">
+      <%= image_tag "illustration.svg", alt: "illustration", width: 500, height: 50 %>
+    </div>
+
+    <footer class="footer">© Tines</footer>
+  </div>
+</div>
+
+<%= javascript_tag do %>
+  document.addEventListener('DOMContentLoaded', function() {
+    const confetti = new ConfettiEffect({
+      amount: 80,
+      onComplete: () => {
+        console.log('Welcome confetti completed!');
+      }
+    });
+    confetti.initialize();
+  });
+<% end %>
